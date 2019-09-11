@@ -41,7 +41,9 @@ repositories {
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation 'com.facebook.react:react-native:+'
+  implementation 'com.facebook.react:react-native:+' {
+    exclude group: 'com.android.support'
+  }
   implementation 'org.greenrobot:eventbus:3.+'
   def supportLibVersion = safeExtGet('supportLibVersion', safeExtGet('supportVersion', null))
   def androidXVersion = safeExtGet('androidXVersion', null)
